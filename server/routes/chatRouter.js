@@ -1,8 +1,8 @@
 const Router = require('express')
 const router = new Router()
-const chatRouter = require('../controllers/chatController')
+const chatController = require('../controllers/chatController')
 
-router.post('/create', chatRouter.create)
-router.get('/getOne', chatRouter.getOne)
+router.post('/', chatController.create)
+router.get('/', chatController.getOne)
 
 module.exports = router

@@ -18,7 +18,7 @@ const Group = sequelize.define('group', {
     name: { type: DataTypes.STRING, unique: true },
     img: { type: DataTypes.STRING, allowNull: false },
     description: { type: DataTypes.STRING },
-    // created_at: { type: DataTypes.DATE, unique: true }
+    created_at: { type: DataTypes.DATE, unique: true }
 })
 
 const Friend = sequelize.define('friend', {
@@ -30,7 +30,7 @@ const Friend = sequelize.define('friend', {
 const Follower = sequelize.define('follower', {
     user_id: { type: DataTypes.INTEGER },
     follower_id: { type: DataTypes.INTEGER },
-    // createdAt: { type: DataTypes.DATE }
+    createdAt: { type: DataTypes.DATE }
 })
 
 const Chat = sequelize.define('chat', {
@@ -45,14 +45,14 @@ const Message = sequelize.define('message', {
     user_id: { type: DataTypes.INTEGER },
     type: { type: DataTypes.STRING },
     text: { type: DataTypes.STRING, unique: true },
-    img: { type: DataTypes.STRING, allowNull: false },
+    // img: { type: DataTypes.STRING, allowNull: false },
     // createdAt: { type: DataTypes.DATA }
 })
 
 const Chat_members = sequelize.define('chat_members', {
     user_id: { type: DataTypes.INTEGER },
     chat_id: { type: DataTypes.INTEGER },
-    // created_at: { type: DataTypes.DATE }
+    created_at: { type: DataTypes.DATE }
 })
 
 const Group_members = sequelize.define('group_members', {
@@ -63,11 +63,11 @@ const Group_members = sequelize.define('group_members', {
 
 const Post = sequelize.define('post', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    title: { type: DataTypes.STRING },
+    title: { type: DataTypes.STRING, unique: true },
     text: { type: DataTypes.STRING },
     author_id: { type: DataTypes.INTEGER },
-    img: { type: DataTypes.STRING, allowNull: false },
-    // created_at: { type: DataTypes.DATE }
+    // img: { type: DataTypes.STRING, allowNull: false },
+    created_at: { type: DataTypes.DATE }
 })
 
 const Post_like = sequelize.define('post_like', {
